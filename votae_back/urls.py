@@ -15,12 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from candidato.api import url as url_candidato
-from voto.api import url as url_voto
+from rest_framework import routers
+from candidato.api.viewsets import CandidatoList
+from voto.api.viewsets import VotoViewSet
+
+router = routers.DefaultRouter()
+router.register(r'candidatos', CandidatoList)
+router.register(r'votos', VotoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/candidatos', include(url_candidato)),
-    path('api/votos', include(url_voto)),
+    path('', include(router.urls)),
 
 ]
