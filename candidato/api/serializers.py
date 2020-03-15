@@ -8,6 +8,7 @@ class EnderecoCandidatoSerializer(ModelSerializer):
     class Meta:
         model = Endereco
         fields = [
+            'id',
             'cep',
             'cidade',
             'estado',
