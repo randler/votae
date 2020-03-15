@@ -21,7 +21,7 @@ from voto.api import url as url_voto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(home_site_urls)),
+    path('/', include(home_site_urls)),
     path('api/candidatos', include(url_candidato)),
     path('api/votos', include(url_voto)),
 
