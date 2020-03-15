@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from sitehome import urls as home_site_urls
+from sitehome.api import url as home_site_urls
 from candidato.api import url as url_candidato
 from voto.api import url as url_voto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include(home_site_urls)),
+    path('', include(home_site_urls)),
     path('api/candidatos', include(url_candidato)),
     path('api/votos', include(url_voto)),
 

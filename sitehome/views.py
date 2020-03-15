@@ -8,6 +8,5 @@ import json
 
 
 class HomePageView(View):
-
-    def get(self, request):
+    def get(self):
         return Response({"api": "OK"})
