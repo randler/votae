@@ -12,5 +12,8 @@ class VotoViewSet(generics.ListAPIView):
 
     def list(self, request):
         votos = Voto.objects.values('candidato').annotate(votos=Count('candidato')).order_by()
+        total_votos = Voto.objects.all().count()
         serializer = VotoSerializer(votos, many=True)
-        return Response(serializer.data)
+        new_serializer_data = list(serializer.data)
+        new_serializer_data.append({'total_votos': total_votos})
+        return Response(new_serializer_data)
