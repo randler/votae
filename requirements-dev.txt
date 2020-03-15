@@ -6,8 +6,6 @@ django-heroku==0.3.1
 django-oauth2-provider==0.2.6.1
 djangorestframework==3.11.0
 mysqlclient==1.4.6
-pkg-resources==0.0.0
-psycopg2==2.8.4
 python-decouple==3.3
 pytz==2019.3
 shortuuid==1.0.1
