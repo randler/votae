@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer, SerializerMethodField
+from rest_framework.serializers import ModelSerializer, StringRelatedField
 
 from candidato.models import Candidato
 from endereco.models import Endereco
@@ -7,11 +7,15 @@ from endereco.models import Endereco
 class EnderecoCandidatoSerializer(ModelSerializer):
     class Meta:
         model = Endereco
-        fields = '__all__'
+        fields = [
+            'cep',
+            'cidade',
+            'estado',
+        ]
 
 
 class CandidatoSerializer(ModelSerializer):
-    endereco = SerializerMethodField()
+    endereco = EnderecoCandidatoSerializer()
 
     class Meta:
         model = Candidato
@@ -20,8 +24,3 @@ class CandidatoSerializer(ModelSerializer):
             'nome',
             'endereco'
         ]
-
-    def endereco(self, obj):
-        endereco = Endereco.objects.all().filter(cliente=obj.id)
-        serializer = EnderecoCandidatoSerializer(endereco, many=False)
-        return serializer.data
