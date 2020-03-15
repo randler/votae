@@ -1,0 +1,8 @@
+asgiref==3.2.5
+Django==3.0.4
+djangorestframework==3.11.0
+pkg-resources
+python-decouple==3.3
+pytz==2019.3
+shortuuid==1.0.1
+sqlparse==0.3.1
