@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
+    'sitehome',
     'endereco',
     'voto',
     'candidato'
@@ -134,8 +135,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-LOGIN_REDIRECT_URL = 'api'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
