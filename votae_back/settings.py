@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['votaeback.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -84,7 +84,7 @@ default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config('DB_NAME'),
@@ -93,7 +93,7 @@ DATABASES = {
         'HOST': config('DB_HOST'),   # Or an IP Address that your DB is hosted on
         'PORT': config('DB_PORT'),
     }
-}
+}'''
 
 
 # Password validation
