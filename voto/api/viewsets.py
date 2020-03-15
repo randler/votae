@@ -8,7 +8,7 @@ from .serializers import VotoSerializer
 
 
 class VotoViewSet(generics.ListCreateAPIView):
-
+    serializer_class = VotoSerializer
     queryset = Voto
 
     def list(self, request):
